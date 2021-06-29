@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
+    <script src="logic.js"></script>
     <title>Notakto</title>
   </head>
   <body>
@@ -25,36 +26,73 @@
       <div class="board-container">
         <div class="board board-1">
           <div class="row row-1">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
+            <div class="square">
+              <div class="content">X</div>
+            </div>
+            <div class="square">
+              <div class="content"></div>
+            </div>
+            <div class="square">
+              <div class="content"></div>
+            </div>
           </div>
           <div class="row row-2">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
+            <div class="square">
+              <div class="content"></div>
+            </div>
+            <div class="square">
+              <div class="content"></div>
+            </div>
+            <div class="square">
+              <div class="content"></div>
+            </div>
           </div>
           <div class="row row-3">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
+            <div class="square">
+              <div class="content">X</div>
+            </div>
+            <div class="square">
+              <div class="content">X</div>
+            </div>
+            <div class="square">
+              <div class="content"></div>
+            </div>
           </div>
         </div>
       </div>
       <div class="scoreboard">
         <h4>Player Scores:</h4>
         <div class="player-scores">
-          <div class="player-1">Player 1:<span>20</span></div>
-          <div class="player-2">Player 2:<span>20</span></div>
+          <div class="player-1">Player 1: <span>20</span></div>
+          <div class="player-2">Player 2: <span>20</span></div>
         </div>
-        <h4>Turn</h4>
+        <h6>Turn</h6>
         <div class="player-turn">
           <span class="player">Player 1</span>
         </div>
       </div>
       <div class="settings">
-        <img src="SVGs/cog-solid.svg" alt="settings-button" />
-        <img src="SVGs/setting-popup-container.svg" alt="options" />
+        <img
+          src="SVGs/cog-solid.svg"
+          alt="settings-button"
+          class="settings-icon"
+        />
+        <svg
+          width="253"
+          height="155"
+          viewBox="0 0 253 155"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="setting-popup-container"
+            d="M243.665 133.259L247.308 135.835C255.271 141.465 251.288 154 241.535 154H11C5.47715 154 1 149.523 1 144V11C1 5.47715 5.47715 1 11 1H229.438C234.961 1 239.438 5.47716 239.438 11V125.094C239.438 128.341 241.014 131.385 243.665 133.259Z"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </div>
     </div>
   </body>

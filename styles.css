@@ -84,4 +84,77 @@ body {
   border-radius: 0.5em;
   border: 3px solid black;
   background: var(--box-Color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* scoreboard styles */
+
+.scoreboard {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scoreboard h4 {
+  font-size: 2em;
+  margin: 0 0 1em 0;
+}
+
+.scoreboard .player-scores {
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+.scoreboard h6 {
+  font-size: 1.5em;
+  margin: 1em 0 0.5em 0;
+}
+
+.scoreboard .player {
+  font-size: 1em;
+}
+
+/* settings styles */
+
+.settings {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  margin-right: 1em;
+}
+
+.settings img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1em;
+  height: auto;
+}
+
+.settings svg {
+  position: absolute;
+  right: 1em;
+  bottom: 0.5em;
+  stroke-dasharray: 781px;
+  stroke-dashoffset: 781px;
+  opacity: 0;
+}
+
+@keyframes settings-anim {
+  10% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+    opacity: 1;
+  }
+}
+
+.settings img:hover + svg {
+  animation: settings-anim 250ms ease forwards;
 }
