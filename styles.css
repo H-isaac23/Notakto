@@ -10,6 +10,8 @@ body {
   padding: 0;
 }
 
+/* Heading styling */
+
 .heading {
   font-size: 1rem;
   display: flex;
@@ -40,5 +42,46 @@ body {
 }
 
 .heading .text-container h2 {
-  margin-right: 1em;
+  margin-right: 0.5em;
+}
+
+/* Main screen styling */
+
+.main-screen {
+  position: relative;
+  font-size: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  height: 70vh;
+}
+
+/* Board styles */
+
+.board-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  width: max-content;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.row .square {
+  width: 3em;
+  height: 3em;
+  border-radius: 0.5em;
+  border: 3px solid black;
+  background: var(--box-Color);
 }
