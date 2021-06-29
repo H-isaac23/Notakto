@@ -84,4 +84,7 @@ body {
   border-radius: 0.5em;
   border: 3px solid black;
   background: var(--box-Color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
