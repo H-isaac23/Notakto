@@ -88,3 +88,32 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* scoreboard styles */
+
+.scoreboard {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scoreboard h4 {
+  font-size: 2em;
+  margin: 0 0 1em 0;
+}
+
+.scoreboard .player-scores {
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+.scoreboard h6 {
+  font-size: 1.5em;
+  margin: 1em 0 0.5em 0;
+}
+
+.scoreboard .player {
+  font-size: 1em;
+}
