@@ -1,7 +1,7 @@
 # Notakto
 A project for the tic-tac-toe variant Notakto, without tutorials(there were no tutorials online anyway, so you know I didn't do this with tutorials). This is basically an IQ test for myself.
 
-## Target(Game Screen)
+## Target(Game Screen for 3 boards)
 ![Picture about the current design target](https://github.com/H-isaac23/Notakto/blob/main/SVGs/Game%20Screen.png?raw=True)
 
 ## Some things to write
