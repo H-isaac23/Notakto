@@ -1,5 +1,44 @@
-:root{
+:root {
   --box-textColor: black;
   --heading-textColor: white;
-  
+  --box-Color: #f1befa;
+  --font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.heading {
+  font-size: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  margin: 0;
+}
+
+.heading .text-container {
+  font-size: 1.5em;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  color: var(--heading-textColor);
+  font-family: var(--font-family);
+  top: 15%;
+  right: 3%;
+}
+
+.heading .text-container > * {
+  margin: 0;
+  padding: 0;
+}
+
+.heading h4 {
+  font-weight: 300;
+}
+
+.heading .text-container h2 {
+  margin-right: 1em;
 }
