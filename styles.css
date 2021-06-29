@@ -117,3 +117,44 @@ body {
 .scoreboard .player {
   font-size: 1em;
 }
+
+/* settings styles */
+
+.settings {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  margin-right: 1em;
+}
+
+.settings img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1em;
+  height: auto;
+}
+
+.settings svg {
+  position: absolute;
+  right: 1em;
+  bottom: 0.5em;
+  stroke-dasharray: 781px;
+  stroke-dashoffset: 781px;
+  opacity: 0;
+}
+
+@keyframes settings-anim {
+  10% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+    opacity: 1;
+  }
+}
+
+.settings img:hover + svg {
+  animation: settings-anim 250ms ease forwards;
+}
