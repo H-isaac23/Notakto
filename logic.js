@@ -11,17 +11,20 @@ function ready() {
 function xSquares() {
   let squares = document.getElementsByClassName("square");
   for (let i = 0; i < squares.length; i++) {
-    let content = squares[i].getElementsByClassName("content")[0];
-    squares[i].addEventListener("click", function () {
-      numScales = numScaled(squares);
-      if (
-        (squares[i].style.transform == "scale(1)" ||
-          squares[i].style.transform == "") &&
-        numScales == 0
-      ) {
+    squares[i].addEventListener("click", () => {
+      let numActive = numScaled(squares);
+      if (numActive == 1) {
+        if (squares[i].style.transform == "scale(1.2)") {
+          squares[i].style.transform = "scale(1)";
+        } else if (
+          squares[i].style.transform == "scale(1)" ||
+          squares[i].style.transform == ""
+        ) {
+          lowlight(squares);
+          squares[i].style.transform = "scale(1.2)";
+        }
+      } else {
         squares[i].style.transform = "scale(1.2)";
-      } else if (squares[i].style.transform == "scale(1.2)") {
-        squares[i].style.transform = "scale(1)";
       }
     });
   }
@@ -36,4 +39,10 @@ function numScaled(squares) {
   }
 
   return numScales;
+}
+
+function lowlight(squares) {
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].style.transform = "scale(1)";
+  }
 }
