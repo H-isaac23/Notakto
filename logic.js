@@ -11,12 +11,13 @@ function ready() {
 function xSquares() {
   let squares = document.getElementsByClassName("square");
   for (let i = 0; i < squares.length; i++) {
-    let content = document.getElementsByClassName("content")[0];
+    let content = squares[i].getElementsByClassName("content")[0];
     squares[i].addEventListener("click", function () {
-      console.log(squares[i].style.transform);
+      numScales = numScaled(squares);
       if (
-        squares[i].style.transform == "scale(1)" ||
-        squares[i].style.transform == ""
+        (squares[i].style.transform == "scale(1)" ||
+          squares[i].style.transform == "") &&
+        numScales == 0
       ) {
         squares[i].style.transform = "scale(1.2)";
       } else if (squares[i].style.transform == "scale(1.2)") {
@@ -24,4 +25,15 @@ function xSquares() {
       }
     });
   }
+}
+
+function numScaled(squares) {
+  let numScales = 0;
+  for (let i = 0; i < squares.length; i++) {
+    if (squares[i].style.transform == "scale(1.2)") {
+      numScales++;
+    }
+  }
+
+  return numScales;
 }
