@@ -5,6 +5,23 @@ if (document.readyState == "loading") {
 }
 
 function ready() {
-  let popup = document.getElementById("setting-popup-container");
-  console.log(popup.getTotalLength() / 2);
+  xSquares();
+}
+
+function xSquares() {
+  let squares = document.getElementsByClassName("square");
+  for (let i = 0; i < squares.length; i++) {
+    let content = document.getElementsByClassName("content")[0];
+    squares[i].addEventListener("click", function () {
+      console.log(squares[i].style.transform);
+      if (
+        squares[i].style.transform == "scale(1)" ||
+        squares[i].style.transform == ""
+      ) {
+        squares[i].style.transform = "scale(1.2)";
+      } else if (squares[i].style.transform == "scale(1.2)") {
+        squares[i].style.transform = "scale(1)";
+      }
+    });
+  }
 }
