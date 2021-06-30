@@ -6,6 +6,7 @@ if (document.readyState == "loading") {
 
 function ready() {
   xSquares();
+  contentEditing();
 }
 
 function xSquares() {
@@ -44,5 +45,22 @@ function numScaled(squares) {
 function lowlight(squares) {
   for (let i = 0; i < squares.length; i++) {
     squares[i].style.transform = "scale(1)";
+  }
+}
+
+function contentEditing() {
+  let squares = document.getElementsByClassName("square");
+  for (let i = 0; i < squares.length; i++) {
+    let content = squares[i].getElementsByClassName("content")[0];
+    document.addEventListener("keydown", (e) => {
+      if (e.code == "KeyX" && squares[i].style.transform == "scale(1.2)") {
+        content.innerText = "X";
+      } else if (
+        e.code == "Backspace" &&
+        squares[i].style.transform == "scale(1.2)"
+      ) {
+        content.innerText = "";
+      }
+    });
   }
 }
