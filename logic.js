@@ -58,6 +58,8 @@ function contentEditing() {
     document.addEventListener("keydown", (e) => {
       if (e.code == "KeyX" && squares[i].style.transform == "scale(1.2)") {
         content.innerText = "X";
+        squares[i].style.transform = "scale(1)";
+        isGameEnd();
       } else if (
         e.code == "Backspace" &&
         squares[i].style.transform == "scale(1.2)"
@@ -78,4 +80,37 @@ function applyFilter() {
 function buttonFilter() {
   let button = document.getElementsByClassName("random-button");
   button[0].addEventListener("click", applyFilter);
+}
+
+function isGameEnd() {
+  let squares = document.getElementsByClassName("square");
+  if (
+    (squares[0].innerText == squares[1].innerText &&
+      squares[0].innerText == squares[2].innerText &&
+      squares[0].innerText == "X") |
+    (squares[3].innerText == squares[4].innerText &&
+      squares[3].innerText == squares[5].innerText &&
+      squares[3].innerText == "X") |
+    (squares[6].innerText == squares[7].innerText &&
+      squares[6].innerText == squares[8].innerText &&
+      squares[6].innerText == "X") |
+    (squares[0].innerText == squares[3].innerText &&
+      squares[0].innerText == squares[6].innerText &&
+      squares[0].innerText == "X") |
+    (squares[1].innerText == squares[4].innerText &&
+      squares[1].innerText == squares[7].innerText &&
+      squares[1].innerText == "X") |
+    (squares[2].innerText == squares[5].innerText &&
+      squares[2].innerText == squares[8].innerText &&
+      squares[2].innerText == "X") |
+    (squares[0].innerText == squares[4].innerText &&
+      squares[0].innerText == squares[8].innerText &&
+      squares[0].innerText == "X") |
+    (squares[2].innerText == squares[4].innerText &&
+      squares[6].innerText == squares[2].innerText &&
+      squares[6].innerText == "X")
+  ) {
+    applyFilter();
+    return;
+  }
 }
