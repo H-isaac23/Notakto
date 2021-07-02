@@ -7,13 +7,14 @@ if (document.readyState == "loading") {
 function ready() {
   xSquares();
   contentEditing();
+  buttonFilter();
 }
 
 function xSquares() {
   let squares = document.getElementsByClassName("square");
   for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener("click", () => {
-      let numActive = numScaled(squares);
+      let numActive = numScaled();
       if (numActive == 1) {
         if (squares[i].style.transform == "scale(1.2)") {
           squares[i].style.transform = "scale(1)";
@@ -21,7 +22,7 @@ function xSquares() {
           squares[i].style.transform == "scale(1)" ||
           squares[i].style.transform == ""
         ) {
-          lowlight(squares);
+          lowlight();
           squares[i].style.transform = "scale(1.2)";
         }
       } else {
@@ -31,7 +32,8 @@ function xSquares() {
   }
 }
 
-function numScaled(squares) {
+function numScaled() {
+  let squares = document.getElementsByClassName("square");
   let numScales = 0;
   for (let i = 0; i < squares.length; i++) {
     if (squares[i].style.transform == "scale(1.2)") {
@@ -42,7 +44,8 @@ function numScaled(squares) {
   return numScales;
 }
 
-function lowlight(squares) {
+function lowlight() {
+  let squares = document.getElementsByClassName("square");
   for (let i = 0; i < squares.length; i++) {
     squares[i].style.transform = "scale(1)";
   }
@@ -63,4 +66,16 @@ function contentEditing() {
       }
     });
   }
+}
+
+function applyFilter() {
+  let squares = document.getElementsByClassName("square");
+  lowlight();
+  let filters = document.getElementsByClassName("board-filter")[0];
+  filters.style.width = "100%";
+}
+
+function buttonFilter() {
+  let button = document.getElementsByClassName("random-button");
+  button[0].addEventListener("click", applyFilter);
 }
