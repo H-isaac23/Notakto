@@ -82,6 +82,7 @@ body {
   margin: 0;
   background: black;
   filter: opacity(0.3);
+  transition: width 250ms ease-out;
 }
 
 .row {
