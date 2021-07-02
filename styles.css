@@ -68,7 +68,21 @@ body {
 }
 
 .board {
+  position: relative;
   width: max-content;
+}
+
+.board-filter {
+  position: absolute;
+  border-radius: 0.5em;
+  top: 0;
+  width: 0%;
+  height: calc(100% - 0.5em);
+  padding: 0;
+  margin: 0;
+  background: black;
+  filter: opacity(0.3);
+  transition: width 250ms ease-out;
 }
 
 .row {
@@ -158,4 +172,12 @@ body {
 
 .settings img:hover + svg {
   animation: settings-anim 250ms ease forwards;
+}
+
+.random-button {
+  border-radius: 5px;
+  background: blanchedalmond;
+  color: black;
+  display: inline-block;
+  width: 100px;
 }
