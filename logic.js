@@ -66,6 +66,7 @@ function contentEditing() {
       ) {
         content.innerText = "";
       }
+      updatePlayerTurn();
     });
   }
 }
@@ -112,5 +113,14 @@ function isGameEnd() {
   ) {
     applyFilter();
     return;
+  }
+}
+
+function updatePlayerTurn() {
+  let turn = document.getElementsByClassName("player-turn")[0];
+  if (turn.innerText == "Player 1") {
+    turn.innerText = "Player 2";
+  } else {
+    turn.innerText = "Player 1";
   }
 }
