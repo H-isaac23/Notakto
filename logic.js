@@ -59,7 +59,18 @@ function contentEditing() {
       if (e.code == "KeyX" && squares[i].style.transform == "scale(1.2)") {
         content.innerText = "X";
         squares[i].style.transform = "scale(1)";
-        isGameEnd();
+
+        if (isGameEnd()) {
+          applyFilter();
+          let turn = document.getElementsByClassName("player-turn")[0];
+          if (turn.innerText == "Player 1") {
+            updatePlayerScore("Player 2");
+          } else {
+            updatePlayerScore("Player 1");
+          }
+        } else {
+          updatePlayerTurn();
+        }
       } else if (
         e.code == "Backspace" &&
         squares[i].style.transform == "scale(1.2)"
@@ -110,7 +121,29 @@ function isGameEnd() {
       squares[6].innerText == squares[2].innerText &&
       squares[6].innerText == "X")
   ) {
-    applyFilter();
-    return;
+    return true;
+  }
+
+  return false;
+}
+
+function updatePlayerTurn() {
+  let turn = document.getElementsByClassName("player-turn")[0];
+  if (turn.innerText == "Player 1") {
+    turn.innerText = "Player 2";
+  } else {
+    turn.innerText = "Player 1";
+  }
+}
+
+function updatePlayerScore(player) {
+  let scores = document.querySelectorAll(".score");
+  let turn = document.getElementsByClassName("player-turn")[0];
+  if (player == "Player 1") {
+    scores[0].innerText = parseInt(scores[0].innerText) + 1;
+    turn.innerText = "Player 1(Winner)";
+  } else if (player == "Player 2") {
+    scores[1].innerText = parseInt(scores[1].innerText) + 1;
+    turn.innerText = "Player 2(Winner)";
   }
 }
