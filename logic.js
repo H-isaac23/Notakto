@@ -8,6 +8,7 @@ function ready() {
   xSquares();
   contentEditing();
   buttonFilter();
+  playAgain();
 }
 
 function xSquares() {
@@ -146,4 +147,20 @@ function updatePlayerScore(player) {
     scores[1].innerText = parseInt(scores[1].innerText) + 1;
     turn.innerText = "Player 2(Winner)";
   }
+}
+
+function playAgain() {
+  let prompt = document.getElementsByClassName("play-again")[0];
+  prompt.addEventListener("click", clearBoards);
+}
+
+function clearBoards() {
+  let squares = document.getElementsByClassName("square");
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].innerText = "";
+  }
+
+  lowlight();
+  let filters = document.getElementsByClassName("board-filter")[0];
+  filters.style.width = "0%";
 }
