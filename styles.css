@@ -80,8 +80,7 @@ body {
   height: calc(100% - 0.5em);
   padding: 0;
   margin: 0;
-  background: black;
-  filter: opacity(0.3);
+  background: rgba(0, 0, 0, 0.3);
   transition: width 250ms ease-out;
 }
 
@@ -107,6 +106,7 @@ body {
 /* Prompt to play again */
 
 .play-again {
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
