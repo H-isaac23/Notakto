@@ -60,7 +60,6 @@ function contentEditing() {
       if (e.code == "KeyX" && squares[i].style.transform == "scale(1.2)") {
         content.innerText = "X";
         squares[i].style.transform = "scale(1)";
-
         if (isGameEnd()) {
           applyFilter();
           let turn = document.getElementsByClassName("player-turn")[0];
@@ -160,7 +159,8 @@ function playAgain() {
 function clearBoards() {
   let squares = document.getElementsByClassName("square");
   for (let i = 0; i < squares.length; i++) {
-    squares[i].innerText = "";
+    let content = squares[i].getElementsByClassName("content")[0];
+    content.innerText = "";
   }
 
   lowlight();
