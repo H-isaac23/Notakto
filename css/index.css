@@ -9,9 +9,22 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  background: red;
+  padding: 1.5em;
+  border: 3px solid white;
+  border-radius: 1em;
+  color: white;
+  background: #6892ff;
 }
 
 .start-game-container h4 {
+  font-family: "Roboto", sans-serif;
   font-size: 2.5em;
+  font-weight: 300;
+  margin: 0;
+}
+
+.start-game-container:hover {
+  border-color: #6892ff;
+  color: #6892ff;
+  background: white;
 }
