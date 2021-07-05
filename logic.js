@@ -8,6 +8,7 @@ function ready() {
   xSquares();
   contentEditing();
   buttonFilter();
+  playAgain();
 }
 
 function xSquares() {
@@ -59,7 +60,6 @@ function contentEditing() {
       if (e.code == "KeyX" && squares[i].style.transform == "scale(1.2)") {
         content.innerText = "X";
         squares[i].style.transform = "scale(1)";
-
         if (isGameEnd()) {
           applyFilter();
           let turn = document.getElementsByClassName("player-turn")[0];
@@ -86,6 +86,9 @@ function applyFilter() {
   lowlight();
   let filters = document.getElementsByClassName("board-filter")[0];
   filters.style.width = "100%";
+
+  let prompt = document.querySelector(".play-again");
+  prompt.style.display = "block";
 }
 
 function buttonFilter() {
@@ -146,4 +149,24 @@ function updatePlayerScore(player) {
     scores[1].innerText = parseInt(scores[1].innerText) + 1;
     turn.innerText = "Player 2(Winner)";
   }
+}
+
+function playAgain() {
+  let prompt = document.getElementsByClassName("play-again")[0];
+  prompt.addEventListener("click", clearBoards);
+}
+
+function clearBoards() {
+  let squares = document.getElementsByClassName("square");
+  for (let i = 0; i < squares.length; i++) {
+    let content = squares[i].getElementsByClassName("content")[0];
+    content.innerText = "";
+  }
+
+  lowlight();
+  let filters = document.getElementsByClassName("board-filter")[0];
+  filters.style.width = "0%";
+
+  let prompt = document.querySelector(".play-again");
+  prompt.style.display = "none";
 }
