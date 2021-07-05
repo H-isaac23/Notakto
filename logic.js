@@ -87,6 +87,9 @@ function applyFilter() {
   lowlight();
   let filters = document.getElementsByClassName("board-filter")[0];
   filters.style.width = "100%";
+
+  let prompt = document.querySelector(".play-again");
+  prompt.style.display = "block";
 }
 
 function buttonFilter() {
@@ -163,4 +166,7 @@ function clearBoards() {
   lowlight();
   let filters = document.getElementsByClassName("board-filter")[0];
   filters.style.width = "0%";
+
+  let prompt = document.querySelector(".play-again");
+  prompt.style.display = "none";
 }
