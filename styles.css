@@ -163,13 +163,21 @@ body {
   height: 50%;
 }
 
-.settings .text-container {
+.settings .svg-container {
   position: relative;
   height: 100%;
+  width: 80%;
+}
+
+.settings .options {
+  position: absolute;
+  right: 0;
+  bottom: 8%;
+  font-size: 0.6em;
   width: 90%;
 }
 
-.settings .text-container::after {
+.settings .svg-container::after {
   content: "";
   height: 100%;
   width: 100%;
@@ -177,7 +185,7 @@ body {
   top: 0;
   left: 0;
   background: white;
-  transition: width 250ms ease-in;
+  transition: width 125ms ease-in;
 }
 
 .settings img {
@@ -197,7 +205,7 @@ body {
 
 /* settings animation */
 
-.settings img:hover + .text-container::after {
+.settings img:hover + .svg-container::after {
   width: 0%;
 }
 
