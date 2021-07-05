@@ -159,6 +159,25 @@ body {
   bottom: 0;
   width: auto;
   margin-right: 1em;
+  width: 10em;
+  height: 50%;
+}
+
+.settings .text-container {
+  position: relative;
+  height: 100%;
+  width: 90%;
+}
+
+.settings .text-container::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  transition: width 250ms ease-in;
 }
 
 .settings img {
@@ -171,25 +190,15 @@ body {
 
 .settings svg {
   position: absolute;
-  right: 1em;
+  right: 0;
   bottom: 0.5em;
-  stroke-dasharray: 781px;
-  stroke-dashoffset: 781px;
-  opacity: 0;
+  opacity: 1;
 }
 
-@keyframes settings-anim {
-  10% {
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: 0px;
-    opacity: 1;
-  }
-}
+/* settings animation */
 
-.settings img:hover + svg {
-  animation: settings-anim 250ms ease forwards;
+.settings img:hover + .text-container::after {
+  width: 0%;
 }
 
 .random-button {
