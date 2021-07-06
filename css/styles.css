@@ -3,6 +3,7 @@
   --heading-textColor: white;
   --box-Color: #f1befa;
   --font-family: "Roboto", sans-serif;
+  --settings-width: 100%;
 }
 
 body {
@@ -180,7 +181,7 @@ body {
 .settings .svg-container::after {
   content: "";
   height: 100%;
-  width: 100%;
+  width: var(--settings-width);
   position: absolute;
   top: 0;
   left: 0;
@@ -201,12 +202,6 @@ body {
   right: 0;
   bottom: 0.5em;
   opacity: 1;
-}
-
-/* settings animation */
-
-.settings img:hover + .svg-container::after {
-  width: 0%;
 }
 
 .random-button {
