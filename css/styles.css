@@ -207,6 +207,18 @@ body {
   opacity: 1;
 }
 
+/* Options styles */
+
+.option {
+  position: relative;
+  transform: scale(1);
+  transition: transform 125ms linear;
+}
+
+.option:hover {
+  transform: scale(1.1);
+}
+
 .random-button {
   border-radius: 5px;
   background: blanchedalmond;
