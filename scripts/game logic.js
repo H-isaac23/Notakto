@@ -1,3 +1,28 @@
+export function clearBoards() {
+  let squares = document.getElementsByClassName("square");
+  for (let i = 0; i < squares.length; i++) {
+    let content = squares[i].getElementsByClassName("content")[0];
+    content.innerText = "";
+  }
+
+  lowlight();
+  let filters = document.getElementsByClassName("board-filter")[0];
+  filters.style.width = "0%";
+
+  let prompt = document.querySelector(".play-again");
+  prompt.style.display = "none";
+
+  let turn = document.getElementsByClassName("player-turn")[0];
+  turn.innerText = "Player 1";
+}
+
+export function lowlight() {
+  let squares = document.getElementsByClassName("square");
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].style.transform = "scale(1)";
+  }
+}
+
 if (document.readyState == "loading") {
   document.addEventListener("DOMContentLoaded", ready);
 } else {
@@ -45,13 +70,6 @@ function numScaled() {
   return numScales;
 }
 
-function lowlight() {
-  let squares = document.getElementsByClassName("square");
-  for (let i = 0; i < squares.length; i++) {
-    squares[i].style.transform = "scale(1)";
-  }
-}
-
 function contentEditing() {
   let squares = document.getElementsByClassName("square");
   for (let i = 0; i < squares.length; i++) {
@@ -82,7 +100,6 @@ function contentEditing() {
 }
 
 function applyFilter() {
-  let squares = document.getElementsByClassName("square");
   lowlight();
   let filters = document.getElementsByClassName("board-filter")[0];
   filters.style.width = "100%";
@@ -154,19 +171,4 @@ function updatePlayerScore(player) {
 function playAgain() {
   let prompt = document.getElementsByClassName("play-again")[0];
   prompt.addEventListener("click", clearBoards);
-}
-
-function clearBoards() {
-  let squares = document.getElementsByClassName("square");
-  for (let i = 0; i < squares.length; i++) {
-    let content = squares[i].getElementsByClassName("content")[0];
-    content.innerText = "";
-  }
-
-  lowlight();
-  let filters = document.getElementsByClassName("board-filter")[0];
-  filters.style.width = "0%";
-
-  let prompt = document.querySelector(".play-again");
-  prompt.style.display = "none";
 }
