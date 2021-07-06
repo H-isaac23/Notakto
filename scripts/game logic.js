@@ -11,6 +11,9 @@ export function clearBoards() {
 
   let prompt = document.querySelector(".play-again");
   prompt.style.display = "none";
+
+  let turn = document.getElementsByClassName("player-turn")[0];
+  turn.innerText = "Player 1";
 }
 
 export function lowlight() {
@@ -97,7 +100,6 @@ function contentEditing() {
 }
 
 function applyFilter() {
-  let squares = document.getElementsByClassName("square");
   lowlight();
   let filters = document.getElementsByClassName("board-filter")[0];
   filters.style.width = "100%";
