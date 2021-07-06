@@ -14,7 +14,7 @@ function ready() {
   let restart = document.getElementsByClassName("restart-option")[0];
   let back = document.getElementsByClassName("back-option")[0];
 
-  reset.addEventListener("click", test);
+  reset.addEventListener("click", resetScores);
   restart.addEventListener("click", restartGame);
   back.addEventListener("click", home);
 }
@@ -36,7 +36,6 @@ function resetScores() {
   for (let i = 0; i < scores.length; i++) {
     scores[i].innerText = "0";
   }
-  alert("hi");
 }
 
 function restartGame() {
@@ -46,8 +45,4 @@ function restartGame() {
 
 function home() {
   window.location.href = "../index.html";
-}
-
-function test() {
-  alert("hi");
 }
