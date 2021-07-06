@@ -1,3 +1,25 @@
+export function clearBoards() {
+  let squares = document.getElementsByClassName("square");
+  for (let i = 0; i < squares.length; i++) {
+    let content = squares[i].getElementsByClassName("content")[0];
+    content.innerText = "";
+  }
+
+  lowlight();
+  let filters = document.getElementsByClassName("board-filter")[0];
+  filters.style.width = "0%";
+
+  let prompt = document.querySelector(".play-again");
+  prompt.style.display = "none";
+}
+
+export function lowlight() {
+  let squares = document.getElementsByClassName("square");
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].style.transform = "scale(1)";
+  }
+}
+
 if (document.readyState == "loading") {
   document.addEventListener("DOMContentLoaded", ready);
 } else {
@@ -43,13 +65,6 @@ function numScaled() {
   }
 
   return numScales;
-}
-
-function lowlight() {
-  let squares = document.getElementsByClassName("square");
-  for (let i = 0; i < squares.length; i++) {
-    squares[i].style.transform = "scale(1)";
-  }
 }
 
 function contentEditing() {
@@ -154,19 +169,4 @@ function updatePlayerScore(player) {
 function playAgain() {
   let prompt = document.getElementsByClassName("play-again")[0];
   prompt.addEventListener("click", clearBoards);
-}
-
-function clearBoards() {
-  let squares = document.getElementsByClassName("square");
-  for (let i = 0; i < squares.length; i++) {
-    let content = squares[i].getElementsByClassName("content")[0];
-    content.innerText = "";
-  }
-
-  lowlight();
-  let filters = document.getElementsByClassName("board-filter")[0];
-  filters.style.width = "0%";
-
-  let prompt = document.querySelector(".play-again");
-  prompt.style.display = "none";
 }
